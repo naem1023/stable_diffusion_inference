@@ -21,7 +21,7 @@ def download_checkpoints(
     force_download: typing.Optional[bool] = None,
     ckpt_filename: typing.Optional[str] = None,
 ) -> str:
-    if ckpt_path.startswith("http"):
+    if ckpt_path.startswith("http") or ckpt_path.startswith("https"):
         # Ex: pl-public-data.s3.amazonaws.com/dream_stable_diffusion/512-base-ema.ckpt
         ckpt_url = ckpt_path
         cache_path = Path(cache_dir) if cache_dir else Path()
